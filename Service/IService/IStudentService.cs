@@ -1,4 +1,4 @@
-﻿using StudentsInfo.ViewModel;
+﻿using GIFStudents.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace StudentsInfo.Service.IService
+namespace GIFStudents.Service.IService
 {
 	public interface IStudentService
 	{

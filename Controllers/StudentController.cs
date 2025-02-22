@@ -1,12 +1,12 @@
-﻿using StudentsInfo.Service.IService;
-using StudentsInfo.ViewModel;
+﻿using GIFStudents.Service.IService;
+using GIFStudents.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace StudentsInfo.Controllers
+namespace GIFStudents.Controllers
 {
     public class StudentController : Controller
     {

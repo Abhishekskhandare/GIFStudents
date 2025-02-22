@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using StudentsInfo.Service;
-using StudentsInfo.Service.IService;
+using GIFStudents.Service;
+using GIFStudents.Service.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
