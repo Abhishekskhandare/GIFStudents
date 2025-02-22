@@ -1,0 +1,54 @@
+﻿@model StudentsInfo.ViewModel.StudentDetail
+
+@{
+    ViewBag.Title = "Edit Student";
+}
+
+<h2>Edit Student Information</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+@using (Html.BeginForm("EditStudent", "Student", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.StudentId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentName)
+        @Html.TextBoxFor(model => model.StudentName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ParentName)
+        @Html.TextBoxFor(model => model.ParentName, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentClass)
+        @Html.DropDownListFor(model => model.StudentClass, ViewBag.Classes as List<SelectListItem>, "Select Class", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ParentEmail)
+        @Html.TextBoxFor(model => model.ParentEmail, new { @class = "form-control", type = "email" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ParentMobile)
+        @Html.TextBoxFor(model => model.ParentMobile, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Active Status</label><br />
+        <label class="checkbox-inline">
+            @Html.CheckBoxFor(model => model.IsActive)
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    @Html.ActionLink("Cancel", "GetAllStudents", null, new { @class = "btn btn-secondary" })
+}
